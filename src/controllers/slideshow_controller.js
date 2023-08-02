@@ -9,12 +9,21 @@ export default class extends Controller {
   }
 
   next() {
-    this.indexValue++;
+    if (this.indexValue === this.slideTargets.length - 1) {
+      this.indexValue = 0;
+    } else {
+      this.indexValue++;
+    }
     this.showCurrentSlide();
   }
 
   previous() {
-    this.indexValue--;
+    if (this.indexValue === 0) {
+      this.indexValue = this.slideTargets.length - 1;
+    } else {
+      this.indexValue--;
+    }
+    
     this.showCurrentSlide();
   }
 
