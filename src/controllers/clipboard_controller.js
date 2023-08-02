@@ -1,13 +1,13 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["pin"];
+  static targets = ["source"];
 
-  print() {
-    console.log(`Pin is ${this.pin}`);
+  copy() {
+    navigator.clipboard.writeText(this.source)
   }
 
-  get pin() {
-    return this.pinTarget.value;
+  get source() {
+    return this.sourceTarget.value;
   }
 }
