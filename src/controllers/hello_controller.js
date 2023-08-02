@@ -8,8 +8,10 @@ export default class extends Controller {
   }
   
   greet() {
-    const element = this.nameTarget
-    const name = element.value
-    console.log(`Hello, ${name}!`)
+    console.log(`Hello, ${this.name}!`)
+  }
+
+  get name() {
+    return this.nameTarget.value
   }
 }
