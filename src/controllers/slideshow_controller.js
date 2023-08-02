@@ -4,17 +4,12 @@ export default class extends Controller {
   static targets = ["slide"];
   static values = { index: Number };
 
-  initialize() {
-    this.showCurrentSlide();
-  }
-
   next() {
     if (this.indexValue === this.slideTargets.length - 1) {
       this.indexValue = 0;
     } else {
       this.indexValue++;
     }
-    this.showCurrentSlide();
   }
 
   previous() {
@@ -24,6 +19,9 @@ export default class extends Controller {
       this.indexValue--;
     }
     
+  }
+
+  indexValueChanged() {
     this.showCurrentSlide();
   }
 
